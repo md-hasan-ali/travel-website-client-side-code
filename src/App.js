@@ -10,6 +10,7 @@ import Home from './components/Home/Home';
 import Login from './components/Login/Login';
 import ManageOrders from './components/ManageOrders/ManageOrders';
 import MyOrders from './components/MyOrders/MyOrders';
+import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import ServiceDetail from './components/ServiceDetail/ServiceDetail';
 
 // App Component
@@ -45,9 +46,9 @@ function App() {
               <Login></Login>
             </Route>
 
-            <Route path='/serviceDetails/:id'>
+            <PrivateRoute path='/serviceDetails/:id'>
               <ServiceDetail></ServiceDetail>
-            </Route>
+            </PrivateRoute>
 
           </Switch>
           <Footer></Footer>

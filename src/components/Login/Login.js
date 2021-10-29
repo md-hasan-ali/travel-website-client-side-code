@@ -1,11 +1,25 @@
 // Adding Necessary file 
 import React from 'react';
+import { useHistory, useLocation } from 'react-router';
 import useAuth from '../../hooks/useAuth';
 import './login.css'
 
 // Login component 
 const Login = () => {
     const { signInWithGoogle, error } = useAuth();
+    const history = useHistory();
+    const location = useLocation();
+    const redirect_uri = location.state?.from || '';
+    console.log(redirect_uri)
+
+    const googleSignIn = () => {
+        signInWithGoogle()
+            .then(() => {
+                history.push(redirect_uri)
+            })
+
+    }
+
     return (
         <div className='login-system'>
             <div className="container">
@@ -16,7 +30,7 @@ const Login = () => {
                                 <i className="fas fa-plane-departure"></i>
                             </div>
                             <h2>Please Login</h2>
-                            <button className='btn btn-success' onClick={signInWithGoogle}><i className="fab fa-google"></i> Google Signin</button>
+                            <button className='btn btn-success' onClick={googleSignIn}><i className="fab fa-google"></i> Google Signin</button>
                         </div>
                         <h4 className='text-white pt-3'>{error}</h4>
                     </div>

@@ -1,7 +1,8 @@
 // Adding Necessary file 
 import firebaseInitializetion from "../firebase/firebase-initialize";
-import { GoogleAuthProvider, signInWithPopup, getAuth, signOut } from "firebase/auth";
+import { GoogleAuthProvider, signInWithPopup, getAuth, signOut, onAuthStateChanged } from "firebase/auth";
 import { useState } from "react";
+import { useEffect } from "react";
 
 // firebase initialize 
 firebaseInitializetion();
@@ -13,17 +14,9 @@ const useFirebase = () => {
 
     const GoogleProvider = new GoogleAuthProvider();
     const auth = getAuth();
+
     const signInWithGoogle = () => {
-        signInWithPopup(auth, GoogleProvider)
-            .then(result => {
-                const user = result.user;
-                console.log(user)
-                setUser(user)
-                setError('');
-            })
-            .catch((error) => {
-                setError(error.message)
-            })
+        return signInWithPopup(auth, GoogleProvider)
     }
 
     const logout = () => {
@@ -31,10 +24,17 @@ const useFirebase = () => {
             .then(() => {
                 setUser({});
             })
-            .then((error) => {
+            .catch((error) => {
                 setError(error.message)
             })
     }
+    useEffect(() => {
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+                setUser(user)
+            }
+        });
+    }, [])
 
     return {
         signInWithGoogle, user, error, logout

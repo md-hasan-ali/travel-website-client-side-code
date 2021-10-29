@@ -18,7 +18,6 @@ const ServiceDetail = () => {
     }, [])
 
     const matchService = details.find(service => service.key === id);
-    console.log(matchService)
 
     // React Hook form
     const { register, handleSubmit } = useForm();
