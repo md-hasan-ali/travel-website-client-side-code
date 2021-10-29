@@ -1,0 +1,40 @@
+.single-blog {
+    box-shadow: 5px 5px 10px gray;
+    border-radius: 5px;
+    padding: 10px;
+}
+.blog-img img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.blog-info {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+}
+.blog-info p {
+    font-weight: 600;
+}
+.blog-title h4 {
+    margin-bottom: 15px;
+}
+.blog-img {
+    position: relative;
+}
+
+.blog-img .img-date {
+    position: absolute;
+    top: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.img-date p {
+    background: green;
+    color: #fff;
+    margin: 0;
+    padding: 7px;
+    border-radius: 0px 0px 0 p13x 10px;
+    border-radius: 0 0 10px 10px;
+}

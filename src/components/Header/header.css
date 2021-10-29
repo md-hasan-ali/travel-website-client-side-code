@@ -1,0 +1,8 @@
+/* header css design  */
+.logoImg img {
+    height: 90px;
+}
+a.nav-link {
+    font-size: 18px;
+    font-weight: 500;
+}

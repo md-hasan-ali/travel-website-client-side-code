@@ -1,0 +1,10 @@
+/* services css design  */
+.section-title {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-title h2 {
+    font-size: 35px;
+    font-weight: 600;
+}

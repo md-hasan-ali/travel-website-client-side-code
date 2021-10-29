@@ -1,0 +1,16 @@
+.subscribe-area {
+    padding:40px;
+}
+.subscribe {
+    width: 80%;
+    margin: 0 auto;
+    background: #1e6946;
+    color: #fff;
+    padding: 90px;
+    border-radius: 5px;
+}
+
+.subscribe h2 {
+    font-size: 50px;
+    margin-bottom: 30px;
+}
