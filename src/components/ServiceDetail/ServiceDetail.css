@@ -1,0 +1,32 @@
+/* ServiceDetails design  */
+.service-details {
+    padding:60px 0;
+}
+.service-detail-content {
+    border: 1px solid gray;
+    padding: 7px;
+}
+.service-detail-content img {
+    width: 100%;
+    margin-bottom: 18px;
+}
+.booking-form {
+    width: 70%;
+    margin: 0 auto;
+    padding-top: 25px;
+}
+.booking-form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 12px;
+    border-radius: 5px;
+    border: 1px solid #fff;
+}
+.placeOrder-form {
+    background: gray;
+    text-align: center;
+    padding: 60px 0;
+}
+.placeOrder-form h4 {
+    color: #fff;
+}

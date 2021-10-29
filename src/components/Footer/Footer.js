@@ -11,10 +11,16 @@ const Footer = () => {
                     <div className="col-md-4">
                         <h3>Address</h3>
                         <p>Alaul center 570 Dhaka</p>
+
                     </div>
                     <div className="col-md-4">
                         <h3>Social Icon</h3>
-
+                        <div className="social-icon">
+                            <li><a href="/"><i class="fab fa-youtube"></i></a></li>
+                            <li><a href="/"><i class="fab fa-facebook-square"></i></a></li>
+                            <li><a href="/"><i class="fab fa-twitter"></i></a></li>
+                            <li><a href="/"><i class="fab fa-linkedin-in"></i></a></li>
+                        </div>
                     </div>
                     <div className="col-md-4">
                         <h3>Footer Menu</h3>
