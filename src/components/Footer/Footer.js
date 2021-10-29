@@ -16,10 +16,10 @@ const Footer = () => {
                     <div className="col-md-4">
                         <h3>Social Icon</h3>
                         <div className="social-icon">
-                            <li><a href="/"><i class="fab fa-youtube"></i></a></li>
-                            <li><a href="/"><i class="fab fa-facebook-square"></i></a></li>
-                            <li><a href="/"><i class="fab fa-twitter"></i></a></li>
-                            <li><a href="/"><i class="fab fa-linkedin-in"></i></a></li>
+                            <li><a href="/"><i className="fab fa-youtube"></i></a></li>
+                            <li><a href="/"><i className="fab fa-facebook-square"></i></a></li>
+                            <li><a href="/"><i className="fab fa-twitter"></i></a></li>
+                            <li><a href="/"><i className="fab fa-linkedin-in"></i></a></li>
                         </div>
                     </div>
                     <div className="col-md-4">

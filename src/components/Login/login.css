@@ -1,0 +1,29 @@
+/* Login page simple design  */
+.login-system {
+    background-image: url('../../Images/blog2.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    padding:100px 0;
+}
+.login {
+    text-align: center;
+    background: #ff9b9b;
+    padding: 70px 0;
+}
+
+.login h2 {
+    margin-bottom: 20px;
+    color:#122033;
+    font-size: 35px;
+}
+.fa-google {
+    color:#b4ec17;
+}
+.login-icon i {
+    font-size: 41px;
+    margin-bottom: 20px;
+    color: #fff;
+    border: 2px dashed;
+    padding: 10px;
+}

@@ -15,11 +15,12 @@ const Header = () => {
                 </Navbar.Brand>
                 <Nav className="ms-auto">
                     <Nav.Link as={Link} to="/home">Home</Nav.Link>
+
                     <Nav.Link as={Link} to="/Myorders">My Orders</Nav.Link>
                     <Nav.Link as={Link} to="/ManageOrders">Manage All Orders</Nav.Link>
                     <Nav.Link as={Link} to="/addService">Add a New Service</Nav.Link>
-
                     <Nav.Link as={Link} to="/logIn">Login</Nav.Link>
+
                 </Nav>
             </Container>
         </Navbar>
