@@ -12,12 +12,12 @@ const ServiceDetail = () => {
     const [details, setDetails] = useState([]);
 
     useEffect(() => {
-        fetch('/services.json')
+        fetch('http://localhost:5000/services')
             .then(res => res.json())
             .then(data => setDetails(data))
     }, [])
 
-    const matchService = details.find(service => service.key === id);
+    const matchService = details.find(service => service._id === id);
 
     // React Hook form
     const { register, handleSubmit } = useForm();
