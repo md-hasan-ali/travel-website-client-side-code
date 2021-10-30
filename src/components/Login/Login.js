@@ -6,7 +6,7 @@ import './login.css'
 
 // Login component 
 const Login = () => {
-    const { signInWithGoogle, error } = useAuth();
+    const { signInWithGoogle, error, setIsLoading } = useAuth();
     const history = useHistory();
     const location = useLocation();
     const redirect_uri = location.state?.from || '/home';
@@ -17,7 +17,7 @@ const Login = () => {
             .then(() => {
                 history.push(redirect_uri)
             })
-
+            .finally(() => setIsLoading(false))
     }
     return (
         <div className='login-system'>
