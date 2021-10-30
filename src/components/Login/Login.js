@@ -6,17 +6,19 @@ import './login.css'
 
 // Login component 
 const Login = () => {
-    const { signInWithGoogle, error, setIsLoading } = useAuth();
+    const { signInWithGoogle, error, setIsLoading, setError } = useAuth();
     const history = useHistory();
     const location = useLocation();
     const redirect_uri = location.state?.from || '/home';
-    console.log(redirect_uri)
 
     const googleSignIn = () => {
         signInWithGoogle()
             .then(() => {
                 history.push(redirect_uri)
             })
+            .catch((error => {
+                setError(error.message);
+            }))
             .finally(() => setIsLoading(false))
     }
     return (
