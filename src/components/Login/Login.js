@@ -9,7 +9,7 @@ const Login = () => {
     const { signInWithGoogle, error } = useAuth();
     const history = useHistory();
     const location = useLocation();
-    const redirect_uri = location.state?.from || '';
+    const redirect_uri = location.state?.from || '/home';
     console.log(redirect_uri)
 
     const googleSignIn = () => {
@@ -19,7 +19,6 @@ const Login = () => {
             })
 
     }
-
     return (
         <div className='login-system'>
             <div className="container">
