@@ -16,7 +16,7 @@ const Service = (props) => {
                         </Card.Text>
                         <p>Price: {price}</p>
                         <Link to={`serviceDetails/${_id}`}>
-                            <Button variant="success">Purchase Now</Button>
+                            <Button variant="success">Booking Now</Button>
                         </Link>
                     </Card.Body>
                 </Card>

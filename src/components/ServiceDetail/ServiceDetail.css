@@ -11,16 +11,8 @@
     margin-bottom: 18px;
 }
 .booking-form {
-    width: 70%;
-    margin: 0 auto;
-    padding-top: 25px;
-}
-.booking-form input {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 12px;
-    border-radius: 5px;
-    border: 1px solid #fff;
+    background: gray;
+    padding: 50px 0;
 }
 .placeOrder-form {
     background: gray;
@@ -29,4 +21,13 @@
 }
 .placeOrder-form h4 {
     color: #fff;
+}
+.booking-form input,textarea {
+    width: 80%;
+    padding: 7px;
+    margin-bottom: 12px;
+}
+
+.booking-form {
+    text-align: center;
 }

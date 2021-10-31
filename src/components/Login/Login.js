@@ -13,8 +13,9 @@ const Login = () => {
 
     const googleSignIn = () => {
         signInWithGoogle()
-            .then(() => {
+            .then((result) => {
                 history.push(redirect_uri)
+                console.log(result.user)
             })
             .catch((error => {
                 setError(error.message);

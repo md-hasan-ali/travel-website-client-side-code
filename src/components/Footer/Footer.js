@@ -8,12 +8,12 @@ const Footer = () => {
         <div className='footer-area'>
             <div className="container">
                 <div className="row">
-                    <div className="col-md-4">
+                    <div className="col-md-4 my-2">
                         <h3>Address</h3>
                         <p>Alaul center 570 Dhaka</p>
 
                     </div>
-                    <div className="col-md-4">
+                    <div className="col-md-4 my-2">
                         <h3>Social Icon</h3>
                         <div className="social-icon">
                             <li><a href="/"><i className="fab fa-youtube"></i></a></li>
@@ -22,7 +22,7 @@ const Footer = () => {
                             <li><a href="/"><i className="fab fa-linkedin-in"></i></a></li>
                         </div>
                     </div>
-                    <div className="col-md-4">
+                    <div className="col-md-4 my-2">
                         <h3>Footer Menu</h3>
                         <ul className="menu">
                             <li><a href="/">Home</a></li>

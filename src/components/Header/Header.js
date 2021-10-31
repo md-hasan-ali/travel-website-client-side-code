@@ -10,27 +10,30 @@ import './header.css'
 const Header = () => {
     const { user, logout } = useAuth();
     return (
-        <Navbar bg="light" variant="light" className='p-0'>
+        <Navbar collapseOnSelect expand="md" sticky="top" bg="light" variant="light" className='p-0'>
             <Container>
                 <Navbar.Brand href="#home" className='logoImg'>
                     <img src={logImg} alt="" />
                 </Navbar.Brand>
-                <Nav className="ms-auto">
-                    <Nav.Link as={Link} to="/home">Home</Nav.Link>
-                    {
-                        user?.displayName ?
-                            <>
-                                <Nav.Link as={Link} to="/Myorders">My Orders</Nav.Link>
-                                <Nav.Link as={Link} to="/ManageOrders">Manage All Orders</Nav.Link>
-                                <Nav.Link as={Link} to="/addService">Add a New Service</Nav.Link>
-                                <button onClick={logout} className='btn btn-danger'>Logout</button>
-                                <span className='pt-2 ps-2'>{user.displayName}</span>
-                            </>
-                            :
-                            <Nav.Link as={Link} to="/logIn" className='btn btn-danger'>Login</Nav.Link>
-                    }
+                <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+                <Navbar.Collapse className="justify-content-end">
+                    <Nav className="ms-auto">
+                        <Nav.Link as={Link} to="/home">Home</Nav.Link>
+                        {
+                            user?.displayName ?
+                                <>
+                                    <Nav.Link as={Link} to="/Myorders">My Orders</Nav.Link>
+                                    <Nav.Link as={Link} to="/ManageOrders">Manage All Orders</Nav.Link>
+                                    <Nav.Link as={Link} to="/addService">Add a New Service</Nav.Link>
+                                    <button onClick={logout} className='btn btn-danger'>Logout</button>
+                                    <span className='pt-2 ps-2'>{user.displayName}</span>
+                                </>
+                                :
+                                <Nav.Link as={Link} to="/logIn" className='btn btn-danger'>Login</Nav.Link>
+                        }
 
-                </Nav>
+                    </Nav>
+                </Navbar.Collapse>
             </Container>
         </Navbar>
     );

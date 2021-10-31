@@ -44,3 +44,11 @@
     color: #fff;
     font-size: 20px;
 }
+
+/* responsive css  */
+
+@media only screen and (max-width:480px) {
+    .banner-content h1 {
+        font-size: 50px;
+    }
+}

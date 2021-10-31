@@ -5,9 +5,11 @@ import { useEffect } from 'react';
 import { useParams } from 'react-router';
 import './ServiceDetail.css'
 import { useForm } from "react-hook-form";
+import useAuth from '../../hooks/useAuth';
 
 // ServiceDetail component 
 const ServiceDetail = () => {
+    const { user } = useAuth();
     const { id } = useParams();
     const [details, setDetails] = useState([]);
 
@@ -17,11 +19,19 @@ const ServiceDetail = () => {
             .then(data => setDetails(data))
     }, [])
 
-    const matchService = details.find(service => service._id === id);
+    const matchService = details.find((service) => service._id === id);
+    // const handleAddToCart = () => {
+    //     const service = matchService;
+    //     service.email = user.email;
+    //     service.name = user.displayName;
+    //     console.log(service)
+    // }
 
-    // React Hook form
+    // react hook form 
     const { register, handleSubmit } = useForm();
-    const onSubmit = data => console.log(data);
+    const onSubmit = data => {
+        console.log(data)
+    };
 
     return (
         <div className='service-details'>
@@ -39,18 +49,25 @@ const ServiceDetail = () => {
                         </div>
                     </div>
                     <div className="col-md-6">
-                        <div className="placeOrder-form">
-                            <h4>Book This Service</h4>
-                            <div className="booking-form">
-                                <form onSubmit={handleSubmit(onSubmit)}>
-                                    <input placeholder='Frist Name' {...register("firstName")} />
-                                    <input placeholder='Last Name' {...register("lastName")} />
-                                    <input type='email' placeholder='Your Email' {...register("email")} />
-                                    <input placeholder='Phone Number' type="number" {...register("phone")} />
-                                    <input type='date' {...register("date")} />
-                                    <input type="submit" value="Place Order" />
-                                </form>
-                            </div>
+                        <div className="booking-form">
+                            <form onSubmit={handleSubmit(onSubmit)}>
+                                <input defaultValue={user?.displayName || ''} {...register("name")} />
+
+                                <input defaultValue={user?.email || ''} {...register("email")} />
+
+                                <input defaultValue={matchService?.name || ''} {...register("ProductName")} />
+
+                                {/* <input value={matchService?.img || ''} type='url' placeholder='Image Url' {...register("img")} /> */}
+
+                                <input defaultValue={matchService?.img || ''}  {...register("img")} />
+
+
+                                <input defaultValue={matchService?.price || ''} {...register("price")} />
+
+                                <textarea placeholder='Address' {...register("address")} />
+
+                                <input type="submit" className='btn btn-danger' value="Booking Confirm" />
+                            </form>
                         </div>
                     </div>
                 </div>

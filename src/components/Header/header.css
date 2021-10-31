@@ -6,3 +6,16 @@ a.nav-link {
     font-size: 18px;
     font-weight: 500;
 }
+
+
+/* responsive  */
+
+@media only screen and (max-width:480px){
+    .navbar-nav .btn-danger {
+        width: 40%;
+        margin-bottom: 15px;
+    }
+    .ms-auto.navbar-nav span {
+        margin-bottom: 15px;
+    }
+}

@@ -7,7 +7,6 @@ import './Services.css'
 // Services Component 
 const Services = () => {
     const [services, setServices] = useState([]);
-
     useEffect(() => {
         fetch('http://localhost:5000/services')
             .then(res => res.json())
@@ -31,7 +30,7 @@ const Services = () => {
                     Loading...
                 </Button> : <Row xs={1} md={3} className="g-4">
                     {
-                        services.map(service => <Service
+                        services.map((service) => <Service
                             key={service._id}
                             service={service}
                         >
