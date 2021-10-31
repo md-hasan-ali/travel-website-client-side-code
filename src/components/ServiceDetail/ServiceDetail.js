@@ -25,7 +25,7 @@ const ServiceDetail = () => {
         const service = matchService;
         service.email = user.email;
         service.ProductName = user.displayName;
-        fetch('http://localhost:5000/addOrder', {
+        fetch('https://dreadful-tomb-65730.herokuapp.com/addOrder', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

@@ -19,7 +19,7 @@ const MyOrders = () => {
         <div>
             <Container className='my-5'>
                 <div className="section-title">
-                    <h2>Manage All Orders</h2>
+                    <h2>My Orders</h2>
                 </div>
                 {<Row xs={1} md={3} className="g-4">
                     {// Add Spinner
