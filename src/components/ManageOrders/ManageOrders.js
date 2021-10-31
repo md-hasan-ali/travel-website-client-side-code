@@ -7,7 +7,7 @@ const ManageOrders = () => {
     const [manageOrders, setManageOrders] = useState([]);
     const [deleteCount, setDeleteCount] = useState(null);
     useEffect(() => {
-        fetch('http://localhost:5000/services')
+        fetch('https://dreadful-tomb-65730.herokuapp.com/services')
             .then(res => res.json())
             .then(data => setManageOrders(data))
     }, [deleteCount])
@@ -15,7 +15,7 @@ const ManageOrders = () => {
     // Delete service
     const handleDelete = (id) => {
         console.log(id)
-        fetch(`http://localhost:5000/deleteService/${id}`, {
+        fetch(`https://dreadful-tomb-65730.herokuapp.com/deleteService/${id}`, {
             method: 'DELETE',
             headers: {
                 'content-type': 'application/json'
