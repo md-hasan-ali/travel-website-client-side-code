@@ -15,7 +15,7 @@ const ManageOrders = () => {
     // Delete service
     const handleDelete = (id) => {
         console.log(id)
-        fetch(`https://dreadful-tomb-65730.herokuapp.com/${id}`, {
+        fetch(`https://dreadful-tomb-65730.herokuapp.com/delete/${id}`, {
             method: 'DELETE',
             headers: {
                 'content-type': 'application/json'
@@ -54,6 +54,7 @@ const ManageOrders = () => {
                                                 {manageOrder.desc}
                                             </Card.Text>
                                             <p>Price: {manageOrder.price}</p>
+                                            <p>Status: {manageOrder.status}</p>
                                             <Button onClick={() => handleDelete(manageOrder._id)} variant="danger">Delete</Button>{' '}
                                             <Button variant="success">Update</Button>
                                         </Card.Body>

@@ -7,6 +7,7 @@ import useAuth from '../../hooks/useAuth';
 // MyOrders Component
 const MyOrders = () => {
     const [myOrders, setMyOrders] = useState([]);
+    const [deleteUser, setDeleteUser] = useState(null)
     const { user } = useAuth()
 
     useEffect(() => {
@@ -14,7 +15,24 @@ const MyOrders = () => {
             .then(res => res.json())
             .then(data => setMyOrders(data))
 
-    }, [])
+    }, [deleteUser]);
+
+    // delete 
+    const handleDelete = (id) => {
+        console.log(id)
+        fetch(`https://dreadful-tomb-65730.herokuapp.com/deleteMyorder/${id}`, {
+            method: "DELETE",
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.deletedCount) {
+                    setDeleteUser(true)
+                } else {
+                    setDeleteUser(false)
+                }
+            })
+
+    }
     return (
         <div>
             <Container className='my-5'>
@@ -38,6 +56,8 @@ const MyOrders = () => {
                                                 {myOrder?.desc}
                                             </Card.Text>
                                             <p>Price: {myOrder?.price}</p>
+                                            <p>Status: {myOrder?.status}</p>
+                                            <button onClick={() => handleDelete(myOrder?._id)} className='btn btn-danger'>Delete</button>
                                         </Card.Body>
                                     </Card>
                                 </Col>

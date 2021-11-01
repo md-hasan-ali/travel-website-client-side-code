@@ -25,6 +25,7 @@ const ServiceDetail = () => {
         const service = matchService;
         service.email = user.email;
         service.ProductName = user.displayName;
+        service.status = 'Pending';
         fetch('https://dreadful-tomb-65730.herokuapp.com/addOrder', {
             method: 'POST',
             headers: {
@@ -36,7 +37,7 @@ const ServiceDetail = () => {
             .then(data => {
                 if (data === true) {
                     alert('Orders Completed Successfully..');
-                    history.push('/home')
+                    history.push('/Myorders')
                 }
             })
     }
